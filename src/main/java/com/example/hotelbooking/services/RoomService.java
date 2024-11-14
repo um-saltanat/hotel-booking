@@ -1,6 +1,7 @@
 package com.example.hotelbooking.services;
 
 import com.example.hotelbooking.entities.Room;
+import com.example.hotelbooking.exceptions.ResourceNotFoundException;
 import com.example.hotelbooking.repositories.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

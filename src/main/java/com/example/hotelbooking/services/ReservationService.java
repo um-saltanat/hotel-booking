@@ -2,6 +2,7 @@ package com.example.hotelbooking.services;
 
 import com.example.hotelbooking.entities.Reservation;
 import com.example.hotelbooking.entities.Room;
+import com.example.hotelbooking.exceptions.RoomNotAvailableException;
 import com.example.hotelbooking.repositories.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
