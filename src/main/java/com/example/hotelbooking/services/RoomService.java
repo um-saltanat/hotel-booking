@@ -1,6 +1,6 @@
 package com.example.hotelbooking.services;
 
-import com.example.hotelbooking.entities.Room;
+import com.example.hotelbooking.entities.RoomEntity;
 import com.example.hotelbooking.exceptions.ResourceNotFoundException;
 import com.example.hotelbooking.repositories.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,32 +12,15 @@ public class RoomService {
     @Autowired
     private RoomRepository roomRepository;
 
-    public List<Room> getAllRooms() {
+    public List<RoomEntity> getAllRooms() {
         return roomRepository.findAll();
     }
 
-    public Room getRoomById(Long id) {
+    public RoomEntity getRoomById(Long id) {
         return roomRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Room not found"));
     }
 
-    public Room createRoom(Room room) {
-        return roomRepository.save(room);
-    }
-
-    public Room updateRoom(Long id, Room updatedRoom) {
-        Room room = getRoomById(id);
-        room.setRoomNumber(updatedRoom.getRoomNumber());
-        room.setType(updatedRoom.getType());
-        room.setPricePerNight(updatedRoom.getPricePerNight());
-        room.setAvailable(updatedRoom.isAvailable());
-        return roomRepository.save(room);
-    }
-
-    public void deleteRoom(Long id) {
-        roomRepository.deleteById(id);
-    }
-
-    public List<Room> findAvailableRooms() {
+    public List<RoomEntity> findAvailableRooms() {
         return roomRepository.findByIsAvailableTrue();
     }
 }
