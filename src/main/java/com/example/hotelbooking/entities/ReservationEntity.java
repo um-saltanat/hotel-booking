@@ -1,15 +1,20 @@
 package com.example.hotelbooking.entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
 
 @Entity
+@Table(name = "reservations")
 @Setter
 @Getter
-public class Reservation {
+@NoArgsConstructor
+@AllArgsConstructor
+public class ReservationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
