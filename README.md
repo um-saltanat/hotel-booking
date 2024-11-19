@@ -53,3 +53,6 @@ This project implements a hotel booking system using Java Spring Boot. It provid
 ```bash
 git clone https://github.com/um-saltanat/hotel-booking-api.git
 cd hotel-booking-api
+
+
+[Hotel Booking API.pptx](https://github.com/user-attachments/files/17808482/Hotel.Booking.API.pptx)
